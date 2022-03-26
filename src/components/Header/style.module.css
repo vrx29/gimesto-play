@@ -1,0 +1,37 @@
+.header {
+  position: fixed;
+  padding: 0 2rem;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--COLOR-BACKGROUND);
+}
+
+.rightCont {
+  display: flex;
+  gap: 1rem;
+}
+
+.searchCont {
+  width: 400px;
+  height: 40px;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  color: var(--COLOR-GRAY-100);
+  background-color: var(--COLOR-ICON-BACKDROP);
+}
+
+.searchCont .searchInput {
+  color: var(--COLOR-LIGHT);
+  flex-grow: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+}

@@ -1,0 +1,1 @@
+export { sharedState } from "./sharedState";

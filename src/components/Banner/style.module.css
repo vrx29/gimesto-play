@@ -1,0 +1,53 @@
+.banner {
+  height: 300px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1rem;
+  background-color: var(--COLOR-TEAL);
+}
+.videoTime {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 2px 4px;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: #1f6879;
+}
+.bannerContent {
+  flex-grow: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.bannerTitle {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.profileInfo {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.profileImg {
+  padding: 4px;
+  border-radius: 50%;
+  border: 1px solid var(--COLOR-LIGHT);
+}
+
+.videoStats {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: #f1f1f1;
+}
+
+.bannerImage img {
+  height: 100%;
+}

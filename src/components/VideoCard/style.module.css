@@ -1,0 +1,69 @@
+.videoCard {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  border-radius: 16px;
+  background-color: var(--COLOR-CARD-BACKGROUND);
+}
+
+.videoThumbnail {
+  position: relative;
+  min-width: 100px;
+  max-height: 180px;
+}
+
+.videoTime {
+  position: absolute;
+  z-index: 2;
+  top: 8px;
+  right: 8px;
+  padding: 2px 4px;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: #201d2b80;
+}
+
+.videoThumbnail .videoBanner {
+  width: 100%;
+  height: 100%;
+}
+
+.videoThumbnail .videoBanner:hover {
+  transform: scale(1.03);
+  transition: all 0.5s linear;
+}
+
+.videoThumbnail .profileImg {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  bottom: -24px;
+  right: 8px;
+  padding: 3px;
+  border-radius: 50%;
+  border: 1px solid var(--COLOR-PRIMARY);
+}
+.videoDetails {
+  padding: 1rem 0.5rem;
+}
+
+.videoChannel {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--COLOR-GRAY-100);
+}
+
+.videoTitle {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.videoStats {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--COLOR-GRAY-200);
+}
