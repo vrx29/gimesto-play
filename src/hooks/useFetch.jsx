@@ -24,7 +24,6 @@ export const useFetch = (apiData, config = {}) => {
           payload: response.data[property],
         });
       } catch (error) {
-        dispatch({ type: RESET_LOADING });
         dispatch({ type: SET_ERROR, payload: error });
       }
     })();
