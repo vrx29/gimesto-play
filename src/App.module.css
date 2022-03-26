@@ -1,0 +1,21 @@
+:root {
+  --COLOR-BACKGROUND: #1f2127;
+  --COLOR-CARD-BACKGROUND: #252836;
+  --COLOR-ICON-BACKDROP: #363341;
+  --COLOR-TEAL: #35a5b9;
+}
+
+body {
+  color: var(--COLOR-LIGHT);
+  background-color: var(--COLOR-BACKGROUND);
+}
+
+main {
+  margin-top: 80px;
+  padding: 1rem 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

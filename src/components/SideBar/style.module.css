@@ -1,0 +1,56 @@
+.sidenav {
+  position: fixed;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.nav_cont {
+  padding: 1rem 2rem;
+}
+
+.nav {
+  list-style: none;
+}
+
+.nav li {
+  height: 48px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+  /* color: #808191; */
+  color: var(--COLOR-GRAY-300);
+  cursor: pointer;
+}
+
+.nav li span {
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  border-radius: 8px;
+  background-color: var(--COLOR-ICON-BACKDROP);
+}
+
+.nav .active li {
+  color: var(--COLOR-LIGHT);
+  font-weight: 800;
+}
+
+.nav .active span {
+  background-color: var(--COLOR-SUCCESS);
+}
+
+.nav li:hover {
+  color: var(--COLOR-LIGHT);
+  transition: color 0.3s linear;
+}
+
+.nav li:hover span {
+  background-color: var(--COLOR-SUCCESS);
+  transition: background-color 0.5s linear;
+}

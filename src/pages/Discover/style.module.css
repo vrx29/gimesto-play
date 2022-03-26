@@ -1,0 +1,18 @@
+.categories {
+  margin: 1rem 0;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.categoryChip {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--COLOR-ICON-BACKDROP);
+  cursor: pointer;
+}
+
+.videoCont {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
