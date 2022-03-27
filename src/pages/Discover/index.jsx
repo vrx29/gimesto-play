@@ -1,5 +1,5 @@
 import { Banner, VideoCard } from "components";
-import { useVideo } from "context/videoContext";
+import { useVideo } from "context";
 import React from "react";
 import styles from "./style.module.css";
 
