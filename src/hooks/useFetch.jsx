@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useReducer } from "react";
 import {
-  RESET_LOADING,
   SET_ERROR,
   SET_LOADING,
   SET_SUCCESS,
@@ -27,6 +26,7 @@ export const useFetch = (apiData, config = {}) => {
         dispatch({ type: SET_ERROR, payload: error });
       }
     })();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { state, dispatch };

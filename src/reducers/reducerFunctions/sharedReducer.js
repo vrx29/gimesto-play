@@ -1,5 +1,4 @@
 import {
-  RESET_LOADING,
   SET_ERROR,
   SET_LOADING,
   SET_SUCCESS,

@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./style.module.css";
-import four from "assets/videos/four.jpg";
-import fourProfile from "assets/profiles/profile4.jpeg";
 
 export function VideoCard({ video }) {
   const {
@@ -10,7 +8,6 @@ export function VideoCard({ video }) {
     channel,
     profile,
     views,
-    time,
     playbackTime,
     uploadTime,
   } = video;

@@ -6,7 +6,7 @@ const VideoContext = createContext();
 
 const VideoProvider = ({ children }) => {
   const {
-    state: { data: videos, error },
+    state: { data: videos },
   } = useFetch({
     api: "/api/videos",
     property: "videos",
