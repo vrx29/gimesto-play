@@ -3,6 +3,7 @@
   overflow: hidden;
   flex-direction: column;
   border-radius: 16px;
+  cursor: pointer;
   background-color: var(--COLOR-CARD-BACKGROUND);
 }
 

@@ -8,6 +8,11 @@ import five from "assets/videos/five.png";
 import six from "assets/videos/six.png";
 import seven from "assets/videos/seven.jpg";
 import eight from "assets/videos/eight.jpg";
+import nine from "assets/videos/nine.jpg";
+
+//Import Video
+import nineVid from "assets/videos/nine.webp";
+
 // Profile Pic import
 import profile1 from "assets/profiles/profile1.jpeg";
 import profile2 from "assets/profiles/profile2.jpeg";
@@ -16,6 +21,7 @@ import profile4 from "assets/profiles/profile4.jpeg";
 import profile5 from "assets/profiles/profile5.jpeg";
 import profile6 from "assets/profiles/profile6.jpeg";
 import profile7 from "assets/profiles/profile7.jpeg";
+import profile9 from "assets/profiles/profile9.jpeg";
 
 /**
  * Videos Database can be added here.
@@ -35,6 +41,7 @@ export const videos = [
     views: "20K",
     uploadTime: "2 weeks",
     playbackTime: 36,
+    likes: "43,289",
   },
   {
     _id: uuid(),
@@ -48,6 +55,8 @@ export const videos = [
     views: "50K",
     uploadTime: "6 weeks",
     playbackTime: 8,
+    trending: true,
+    likes: "4,289",
   },
   {
     _id: uuid(),
@@ -61,6 +70,8 @@ export const videos = [
     views: "4K",
     uploadtime: "2 months",
     playbackTime: 56,
+    trending: false,
+    likes: "289",
   },
   {
     _id: uuid(),
@@ -73,6 +84,8 @@ export const videos = [
     views: "70K",
     uploadTime: "1 year",
     playbackTime: 12,
+    trending: false,
+    likes: "89,289",
   },
   {
     _id: uuid(),
@@ -85,6 +98,8 @@ export const videos = [
     views: "900K",
     uploadTime: "6 months",
     playbackTime: 6,
+    trending: true,
+    likes: "23,289",
   },
   {
     _id: uuid(),
@@ -97,6 +112,8 @@ export const videos = [
     views: "1.2M",
     uploadTime: "1 month",
     playbackTime: 14,
+    trending: true,
+    likes: "3,489",
   },
   {
     _id: uuid(),
@@ -109,6 +126,8 @@ export const videos = [
     views: "1.8M",
     uploadTime: "5 months",
     playbackTime: 9,
+    trending: true,
+    likes: "8,289",
   },
   {
     _id: uuid(),
@@ -121,5 +140,22 @@ export const videos = [
     views: "400K",
     uploadTime: "2 years",
     playbackTime: 18,
+    trending: false,
+    likes: "889",
+  },
+  {
+    _id: uuid(),
+    title: "THE BEST PRO ACES OF 2022! (INSANE PLAYS!) - CS:GO",
+    url: "https://www.youtube.com/watch?v=2DMW3rvrEVc",
+    thumbnail: nine,
+    channel: "Snipe2DieTV - CS:GO Channel",
+    profile: profile9,
+    category: "gameplay",
+    views: "7K",
+    uploadTime: "22 hours",
+    playbackTime: "12",
+    trending: true,
+    video: nineVid,
+    likes: "76,006",
   },
 ];

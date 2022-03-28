@@ -25,7 +25,7 @@ export function Login() {
     if (isLoggedIn) {
       navigate(previousPath, { replace: true });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggedIn]);
 
   const loginHandler = (e) => {
@@ -42,8 +42,9 @@ export function Login() {
         </p>
         <form className={styles.signupForm} onSubmit={loginHandler}>
           <div className={styles.inputGrp}>
-            <label>Email address</label>
+            <label htmlFor="email_input">Email address</label>
             <input
+              id="email_input"
               className="input"
               type="email"
               placeholder="Email address"
@@ -53,8 +54,9 @@ export function Login() {
             />
           </div>
           <div className={styles.inputGrp}>
-            <label>Password</label>
+            <label htmlFor="pass_input">Password</label>
             <input
+              id="pass_input"
               className="input"
               type="password"
               placeholder="Password"

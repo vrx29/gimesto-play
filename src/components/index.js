@@ -4,3 +4,4 @@ export { Header } from "./Header";
 export { Banner } from "./Banner";
 export { VideoCard } from "./VideoCard";
 export { Loader } from "./Loader";
+export { TrendingCard } from "./TrendingCard";

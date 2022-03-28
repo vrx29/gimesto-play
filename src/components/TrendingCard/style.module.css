@@ -1,0 +1,99 @@
+.trendingCard {
+  position: relative;
+  padding: 1rem 2rem 1rem 3rem;
+  display: flex;
+  width: 100%;
+  height: 200px;
+  border-radius: 1rem;
+  background-color: var(--COLOR-CARD-BACKGROUND);
+  cursor: pointer;
+}
+
+.trendingCard .id {
+  position: absolute;
+  font-size: 3rem;
+  font-weight: 800;
+  z-index: 99;
+  top: 1rem;
+  left: -1.3rem;
+  color: rgba(255, 255, 255, 0.082);
+}
+
+.imgCont {
+  position: relative;
+  min-width: 260px;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1.2rem;
+}
+
+.imgCont img {
+  max-width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+
+.videoTime {
+  position: absolute;
+  z-index: 2;
+  bottom: 8px;
+  right: 8px;
+  padding: 2px 4px;
+  font-size: 12px;
+  border-radius: 4px;
+  background-color: rgba(14, 14, 14, 0.418);
+}
+
+.dataCont {
+  padding-left: 1rem;
+}
+
+.title {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.videoStats {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 1.5rem;
+  color: var(--COLOR-GRAY-200);
+}
+
+.videoStats span {
+  display: flex;
+  align-items: center;
+}
+
+.videoStats span svg {
+  margin-right: 0.5rem;
+}
+
+.channelDetails {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.profileImg {
+  height: 48px;
+  width: 48px;
+  padding: 3px;
+  border-radius: 50%;
+  border: 1px solid var(--COLOR-LIGHT);
+}
+
+.videoChannel {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--COLOR-GRAY-100);
+}
+
+.uploadTime {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: #6f7080;
+}
