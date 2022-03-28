@@ -6,6 +6,7 @@
   height: 200px;
   border-radius: 1rem;
   background-color: var(--COLOR-CARD-BACKGROUND);
+  cursor: pointer;
 }
 
 .trendingCard .id {

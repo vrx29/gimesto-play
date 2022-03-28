@@ -1,9 +1,9 @@
-import "./loader.css";
+import styles from "./style.module.css";
 import ReactLoading from "react-loading";
 
 export function Loader({ type, color, height, width }) {
   return (
-    <div className="loader-cont">
+    <div className={styles.loaderCont}>
       <ReactLoading type={type} color={color} height={height} width={width} />
     </div>
   );

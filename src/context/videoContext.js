@@ -1,7 +1,5 @@
 import { useFetch } from "hooks";
-import { filterData } from "utils/videoUtils";
-
-const { createContext, useContext, useState } = require("react");
+import { createContext, useContext } from "react";
 
 const VideoContext = createContext();
 

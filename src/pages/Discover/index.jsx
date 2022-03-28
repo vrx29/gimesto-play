@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { Banner, VideoCard } from "components";
 import { useVideo } from "context";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { filterData } from "utils/videoUtils";
 import styles from "./style.module.css";
 

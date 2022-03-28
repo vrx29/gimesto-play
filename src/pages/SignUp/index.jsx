@@ -19,7 +19,7 @@ export function SignUp() {
     if (isLoggedIn) {
       navigate(previousPath, { replace: true });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggedIn]);
 
   const signUpHandler = (e) => {
@@ -36,8 +36,9 @@ export function SignUp() {
         </p>
         <form className={styles.signupForm} onSubmit={signUpHandler}>
           <div className={styles.inputGrp}>
-            <label>First name</label>
+            <label htmlFor="first_name">First name</label>
             <input
+              id="first_name"
               name="firstName"
               className="input"
               type="text"
@@ -46,8 +47,9 @@ export function SignUp() {
             />
           </div>
           <div className={styles.inputGrp}>
-            <label>Last name</label>
+            <label htmlFor="last_name">Last name</label>
             <input
+              id="last_name"
               name="lastName"
               className="input"
               type="text"
@@ -56,8 +58,9 @@ export function SignUp() {
             />
           </div>
           <div className={styles.inputGrp}>
-            <label>Email address</label>
+            <label htmlFor="email">Email address</label>
             <input
+              id="email"
               name="email"
               className="input"
               type="text"
@@ -66,8 +69,9 @@ export function SignUp() {
             />
           </div>
           <div className={styles.inputGrp}>
-            <label>Password</label>
+            <label htmlFor="password">Password</label>
             <input
+              id="password"
               name="password"
               className="input"
               type="password"
@@ -76,8 +80,9 @@ export function SignUp() {
             />
           </div>
           <div className={styles.inputGrp}>
-            <label>Confirm Password</label>
+            <label htmlFor="confirm_password">Confirm Password</label>
             <input
+              id="confirm_password"
               name="confirmPassword"
               className="input"
               type="password"
