@@ -7,3 +7,5 @@ export { ArrowRight } from "./ArrowRight";
 export { Search } from "./Search";
 export { Heart } from "./Heart";
 export { Watch } from "./Watch";
+export { Eye } from "./Eye";
+export { HeartTail } from "./HeartTail";

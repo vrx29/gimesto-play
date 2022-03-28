@@ -11,6 +11,10 @@
   cursor: pointer;
 }
 
+.active {
+  background-color: var(--COLOR-WARNING);
+}
+
 .videoCont {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
