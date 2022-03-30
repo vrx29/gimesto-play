@@ -9,3 +9,4 @@ export { Heart } from "./Heart";
 export { Watch } from "./Watch";
 export { Eye } from "./Eye";
 export { HeartTail } from "./HeartTail";
+export { Save } from "./Save";
