@@ -9,6 +9,7 @@ import {
   Login,
   SignUp,
   History,
+  VideoPlayback,
 } from "pages";
 import { ProtectedRoute } from "routes";
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home />}>
           <Route index element={<Discover />} />
           <Route path="/trending" element={<Trending />} />
+          <Route path="/video/:videoId" element={<VideoPlayback />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route

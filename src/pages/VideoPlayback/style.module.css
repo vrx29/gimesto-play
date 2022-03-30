@@ -1,0 +1,49 @@
+.videoCont {
+  width: 100%;
+}
+
+.videoCont iframe {
+  width: 100%;
+  height: 500px;
+}
+
+.info {
+  margin: 1rem 0;
+}
+
+.descCont {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.channelInfo {
+  display: flex;
+}
+
+.btnCont {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.btn {
+  background-color: var(--COLOR-ICON-BACKDROP);
+}
+
+.btn svg {
+  margin-right: 0.5rem;
+}
+
+.liked {
+  color: var(--COLOR-ERROR);
+}
+
+.watched {
+  color: var(--COLOR-WARNING);
+}
+
+.videoDescription {
+  max-width: 70%;
+}

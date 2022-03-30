@@ -1,7 +1,8 @@
 import classNames from "classnames";
 import { Banner, VideoCard } from "components";
 import { useVideo } from "context";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { filterData } from "utils/videoUtils";
 import styles from "./style.module.css";
 
@@ -29,7 +30,9 @@ export function Discover() {
       </div>
       <div className={styles.videoCont}>
         {filteredVideos.map((video) => (
-          <VideoCard video={video} key={video._id} />
+          <Link to={`/video/${video._id}`} key={video._id}>
+            <VideoCard video={video} />
+          </Link>
         ))}
       </div>
     </>
