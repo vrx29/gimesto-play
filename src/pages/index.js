@@ -6,3 +6,4 @@ export { Login } from "./Login";
 export { SignUp } from "./SignUp";
 export { History } from "./History";
 export { VideoPlayback } from "./VideoPlayback";
+export { Liked } from "./Liked";
