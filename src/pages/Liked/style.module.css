@@ -1,0 +1,12 @@
+.videosCont {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.videosCount {
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: 300;
+}

@@ -4,9 +4,11 @@ import { useFetch } from "hooks";
 import { useParams } from "react-router-dom";
 import classNames from "classnames";
 import { Heart, Save, Watch } from "assets/icons";
+import { useLikedVideo } from "context";
 
 export function VideoPlayback() {
   const { videoId } = useParams();
+  const { likedVideos, addLikedVideo, deleteLikedVideo } = useLikedVideo();
 
   const {
     state: { data: video, loading },
@@ -22,9 +24,9 @@ export function VideoPlayback() {
           <iframe
             src={`https://www.youtube.com/embed/${video.url}`}
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
           <div className={styles.info}>
             <h5>{video.title}</h5>
@@ -38,10 +40,23 @@ export function VideoPlayback() {
                 <p>{video.channel}</p>
               </div>
               <div className={styles.btnCont}>
-                <button className={classNames("btn", styles.btn)}>
-                  <Heart className={styles.liked} />
-                  Like
-                </button>
+                {likedVideos.some((item) => item._id === video._id) ? (
+                  <button
+                    className={classNames("btn", styles.btn)}
+                    onClick={() => deleteLikedVideo(video._id)}
+                  >
+                    <Heart className={styles.liked} />
+                    Liked
+                  </button>
+                ) : (
+                  <button
+                    className={classNames("btn", styles.btn)}
+                    onClick={() => addLikedVideo(video)}
+                  >
+                    <Heart />
+                    Like
+                  </button>
+                )}
                 <button className={classNames("btn", styles.btn)}>
                   <Save />
                   Save

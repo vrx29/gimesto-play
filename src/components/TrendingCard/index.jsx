@@ -4,7 +4,6 @@ import styles from "./style.module.css";
 
 export function TrendingCard({ data, id }) {
   const {
-    _id,
     title,
     thumbnail,
     channel,
@@ -12,7 +11,6 @@ export function TrendingCard({ data, id }) {
     views,
     uploadTime,
     playbackTime,
-    video,
     likes,
   } = data;
   return (

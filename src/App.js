@@ -10,6 +10,7 @@ import {
   SignUp,
   History,
   VideoPlayback,
+  Liked,
 } from "pages";
 import { ProtectedRoute } from "routes";
 
@@ -29,6 +30,14 @@ function App() {
             element={
               <ProtectedRoute path="/history">
                 <History />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/liked"
+            element={
+              <ProtectedRoute path="/liked">
+                <Liked />
               </ProtectedRoute>
             }
           />
