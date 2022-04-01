@@ -1,6 +1,6 @@
 import { Delete, Heart, Save, Watch } from "assets/icons";
 import classNames from "classnames";
-import { useHistory, useLikedVideo } from "context";
+import { useHistory, useLikedVideo, useWatch } from "context";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./style.module.css";
@@ -17,6 +17,7 @@ export function SharedVideoCard({ video }) {
     uploadTime,
   } = video;
   const { likedVideos, addLikedVideo, deleteLikedVideo } = useLikedVideo();
+  const { watchLater, addWatchLater, deleteWatchLater } = useWatch();
   const { pathname } = useLocation();
   const { deleteVideoHistory } = useHistory();
 
@@ -67,9 +68,21 @@ export function SharedVideoCard({ video }) {
             <Save />
             Save
           </button>
-          <button className={classNames("btn", styles.btn, styles.watched)}>
-            <Watch /> Watch Later
-          </button>
+          {watchLater.some((item) => item._id === video._id) ? (
+            <button
+              className={classNames("btn", styles.btn, styles.watched)}
+              onClick={() => deleteWatchLater(video._id)}
+            >
+              <Watch /> Watch Later
+            </button>
+          ) : (
+            <button
+              className={classNames("btn", styles.btn)}
+              onClick={() => addWatchLater(video)}
+            >
+              <Watch /> Watch Later
+            </button>
+          )}
           {pathname === "/history" && (
             <button
               className={classNames("btn", styles.btn, styles.deleteIcon)}

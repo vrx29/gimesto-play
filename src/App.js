@@ -11,6 +11,7 @@ import {
   History,
   VideoPlayback,
   Liked,
+  WatchLater,
 } from "pages";
 import { ProtectedRoute } from "routes";
 
@@ -38,6 +39,14 @@ function App() {
             element={
               <ProtectedRoute path="/liked">
                 <Liked />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/watch-later"
+            element={
+              <ProtectedRoute path="/watch-later">
+                <WatchLater />
               </ProtectedRoute>
             }
           />

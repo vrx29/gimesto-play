@@ -4,11 +4,12 @@ import { useFetch } from "hooks";
 import { useParams } from "react-router-dom";
 import classNames from "classnames";
 import { Heart, Save, Watch } from "assets/icons";
-import { useHistory, useLikedVideo } from "context";
+import { useHistory, useLikedVideo, useWatch } from "context";
 
 export function VideoPlayback() {
   const { videoId } = useParams();
   const { likedVideos, addLikedVideo, deleteLikedVideo } = useLikedVideo();
+  const { watchLater, addWatchLater, deleteWatchLater } = useWatch();
   const { addHistory } = useHistory();
   const {
     state: { data: video, loading },
@@ -67,11 +68,21 @@ export function VideoPlayback() {
                   <Save />
                   Save
                 </button>
-                <button
-                  className={classNames("btn", styles.btn, styles.watched)}
-                >
-                  <Watch /> Watch Later
-                </button>
+                {watchLater.some((item) => item._id === video._id) ? (
+                  <button
+                    className={classNames("btn", styles.btn, styles.watched)}
+                    onClick={() => deleteWatchLater(video._id)}
+                  >
+                    <Watch /> Watch Later
+                  </button>
+                ) : (
+                  <button
+                    className={classNames("btn", styles.btn)}
+                    onClick={() => addWatchLater(video)}
+                  >
+                    <Watch /> Watch Later
+                  </button>
+                )}
               </div>
             </div>
             <p className={styles.videoDescription}>{video.description}</p>
