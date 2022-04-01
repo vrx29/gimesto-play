@@ -11,3 +11,4 @@ export { Eye } from "./Eye";
 export { HeartTail } from "./HeartTail";
 export { Save } from "./Save";
 export { Close } from "./Close";
+export { Delete } from "./Delete";

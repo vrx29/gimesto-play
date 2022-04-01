@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./style.module.css";
 import { useFetch } from "hooks";
 import { useParams } from "react-router-dom";
 import classNames from "classnames";
 import { Heart, Save, Watch } from "assets/icons";
-import { useLikedVideo } from "context";
+import { useHistory, useLikedVideo } from "context";
 
 export function VideoPlayback() {
   const { videoId } = useParams();
   const { likedVideos, addLikedVideo, deleteLikedVideo } = useLikedVideo();
-
+  const { addHistory } = useHistory();
   const {
     state: { data: video, loading },
   } = useFetch({
@@ -17,12 +17,18 @@ export function VideoPlayback() {
     property: "video",
   });
 
+  useEffect(() => {
+    if (video._id) {
+      addHistory(video);
+    }
+  }, [video]);
+
   return (
     <div>
       {!loading && (
         <div className={styles.videoCont}>
           <iframe
-            src={`https://www.youtube.com/embed/${video.url}`}
+            src={`https://www.youtube.com/embed/${video.url}?autoplay=1`}
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -1,11 +1,13 @@
-import { Heart, Save, Watch } from "assets/icons";
+import { Delete, Heart, Save, Watch } from "assets/icons";
 import classNames from "classnames";
-import { useLikedVideo } from "context";
+import { useHistory, useLikedVideo } from "context";
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./style.module.css";
 
 export function SharedVideoCard({ video }) {
   const {
+    _id,
     title,
     thumbnail,
     channel,
@@ -15,25 +17,28 @@ export function SharedVideoCard({ video }) {
     uploadTime,
   } = video;
   const { likedVideos, addLikedVideo, deleteLikedVideo } = useLikedVideo();
+  const { pathname } = useLocation();
+  const { deleteVideoHistory } = useHistory();
 
   return (
     <div className={styles.videoCard}>
-      <div className={styles.videoThumbnail}>
-        <span className={styles.videoTime}>{playbackTime} min</span>
-        <img
-          className={styles.videoBanner}
-          src={thumbnail}
-          alt={channel}
-          loading="lazy"
-        />
-        <img
-          className={styles.profileImg}
-          src={profile}
-          alt={profile}
-          loading="lazy"
-        />
-      </div>
-
+      <Link to={`/video/${_id}`}>
+        <div className={styles.videoThumbnail}>
+          <span className={styles.videoTime}>{playbackTime} min</span>
+          <img
+            className={styles.videoBanner}
+            src={thumbnail}
+            alt={channel}
+            loading="lazy"
+          />
+          <img
+            className={styles.profileImg}
+            src={profile}
+            alt={profile}
+            loading="lazy"
+          />
+        </div>
+      </Link>
       <div className={styles.videoDetails}>
         <p className={styles.videoChannel}>{channel}</p>
         <h6 className={styles.videoTitle}>{title}</h6>
@@ -65,6 +70,14 @@ export function SharedVideoCard({ video }) {
           <button className={classNames("btn", styles.btn, styles.watched)}>
             <Watch /> Watch Later
           </button>
+          {pathname === "/history" && (
+            <button
+              className={classNames("btn", styles.btn, styles.deleteIcon)}
+              onClick={() => deleteVideoHistory(video._id)}
+            >
+              <Delete />
+            </button>
+          )}
         </div>
       </div>
     </div>

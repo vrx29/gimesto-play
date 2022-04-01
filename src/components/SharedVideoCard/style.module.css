@@ -96,3 +96,7 @@
 .watched {
   color: var(--COLOR-WARNING);
 }
+
+.deleteIcon svg{
+  margin-right: 0;
+}
