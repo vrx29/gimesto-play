@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+// eslint-disable-next-line no-unused-vars
 import styles from "./index.module.css";
 import App from "./App";
 import { makeServer } from "./server";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { VideoProvider } from "context/videoContext";
 import { AuthProvider } from "context/authContext";
-import { LikedProvider } from "context";
+import { HistoryProvider, LikedProvider } from "context";
 
 // Call make Server
 makeServer();
@@ -16,9 +17,11 @@ ReactDOM.render(
     <VideoProvider>
       <AuthProvider>
         <LikedProvider>
-          <BrowserRouter>
-            <App />
-          </BrowserRouter>
+          <HistoryProvider>
+            <Router>
+              <App />
+            </Router>
+          </HistoryProvider>
         </LikedProvider>
       </AuthProvider>
     </VideoProvider>
