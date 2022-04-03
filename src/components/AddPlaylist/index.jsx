@@ -61,7 +61,7 @@ export function AddPlaylist({ title, handleModal, playlists, video }) {
         )}
         <input
           className="input"
-          type="email"
+          type="text"
           placeholder="Create new playlist"
           value={playlistName}
           onChange={(e) => setPlaylistName(e.target.value)}
