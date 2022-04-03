@@ -1,0 +1,53 @@
+.playlist {
+  max-width: 26rem;
+  height: 100px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 1rem;
+  background-color: var(--COLOR-CARD-BACKGROUND);
+}
+
+.playlistIcon {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: var(--COLOR-GRAY-600);
+}
+
+.playlistName {
+  margin: 0 1rem;
+  width: 80px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--COLOR-GRAY-600);
+}
+
+.btnDelete {
+  height: 30px;
+  width: 30px;
+  border-radius: 5px;
+  margin-left: auto;
+  background-color: var(--COLOR-GRAY-600);
+}
+
+.playlistIcon,
+.playlistName,
+.btnDelete {
+  background: rgb(49, 52, 69);
+  background: linear-gradient(
+    90deg,
+    rgba(49, 52, 69, 1) 0%,
+    rgba(70, 73, 92, 1) 52%,
+    rgba(49, 52, 69, 1) 99%
+  );
+  background-size: 200% 100%;
+  animation: 1s shine linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}

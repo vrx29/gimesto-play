@@ -8,3 +8,5 @@ export { History } from "./History";
 export { VideoPlayback } from "./VideoPlayback";
 export { Liked } from "./Liked";
 export { WatchLater } from "./WatchLater";
+export { Playlist } from "./Playlist";
+export { PlaylistVideos } from "./PlaylistVideos";

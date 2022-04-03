@@ -5,7 +5,8 @@ import { CardLoader, EmptyState, SharedVideoCard } from "components";
 import classNames from "classnames";
 
 export function History() {
-  const { history, loading, getHistory, clearHistory } = useHistory();
+  const { history, loading, getHistory, clearHistory, deleteVideoHistory } =
+    useHistory();
 
   useEffect(() => {
     getHistory();
@@ -37,7 +38,11 @@ export function History() {
       ) : history.length > 0 ? (
         <div className={styles.videosCont}>
           {history.map((video) => (
-            <SharedVideoCard video={video} key={video._id} />
+            <SharedVideoCard
+              video={video}
+              key={video._id}
+              deleteVideo={deleteVideoHistory}
+            />
           ))}
         </div>
       ) : (

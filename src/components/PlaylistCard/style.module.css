@@ -1,0 +1,49 @@
+.playlist {
+  max-width: 26rem;
+  height: 100px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 1rem;
+  background-color: var(--COLOR-CARD-BACKGROUND);
+}
+
+.playlist a {
+  flex-grow: 1;
+}
+
+.playlistContent {
+  display: flex;
+  align-items: center;
+}
+
+.playlistIcon {
+  font-size: 2rem;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: var(--COLOR-WARNING);
+  background-color: var(--COLOR-GRAY-600);
+}
+
+.detailsCont {
+  margin-left: 0.5rem;
+}
+
+.playlistName {
+}
+
+.playlistTimestamp{
+  font-size: 0.8rem;
+  color: var(--COLOR-GRAY-300);
+}
+
+.btnDelete {
+  padding: 0;
+  font-size: 1.4rem;
+  color: var(--COLOR-ERROR);
+}

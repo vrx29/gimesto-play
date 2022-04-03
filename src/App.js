@@ -12,6 +12,8 @@ import {
   VideoPlayback,
   Liked,
   WatchLater,
+  Playlist,
+  PlaylistVideos,
 } from "pages";
 import { ProtectedRoute } from "routes";
 
@@ -47,6 +49,22 @@ function App() {
             element={
               <ProtectedRoute path="/watch-later">
                 <WatchLater />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/playlist"
+            element={
+              <ProtectedRoute path="/playlist">
+                <Playlist />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/playlist/:playlistId"
+            element={
+              <ProtectedRoute path="/playlist/:playlistId">
+                <PlaylistVideos />
               </ProtectedRoute>
             }
           />

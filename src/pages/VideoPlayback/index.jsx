@@ -1,15 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./style.module.css";
 import { useFetch } from "hooks";
 import { useParams } from "react-router-dom";
 import classNames from "classnames";
 import { Heart, Save, Watch } from "assets/icons";
-import { useHistory, useLikedVideo, useWatch } from "context";
+import { useHistory, useLikedVideo, usePlaylist, useWatch } from "context";
+import { AddPlaylist } from "components";
 
 export function VideoPlayback() {
   const { videoId } = useParams();
   const { likedVideos, addLikedVideo, deleteLikedVideo } = useLikedVideo();
   const { watchLater, addWatchLater, deleteWatchLater } = useWatch();
+  const { playlists, getPlaylists } = usePlaylist();
+  const [showPlaylistModal, setShowPlaylistModal] = useState(false);
   const { addHistory } = useHistory();
   const {
     state: { data: video, loading },
@@ -17,6 +20,10 @@ export function VideoPlayback() {
     api: `/api/video/${videoId}`,
     property: "video",
   });
+
+  useEffect(() => {
+    getPlaylists();
+  }, []);
 
   useEffect(() => {
     if (video._id) {
@@ -46,44 +53,57 @@ export function VideoPlayback() {
                 />
                 <p>{video.channel}</p>
               </div>
-              <div className={styles.btnCont}>
-                {likedVideos.some((item) => item._id === video._id) ? (
+              {video?._id && (
+                <div className={styles.btnCont}>
+                  {likedVideos.some((item) => item._id === video._id) ? (
+                    <button
+                      className={classNames("btn", styles.btn)}
+                      onClick={() => deleteLikedVideo(video._id)}
+                    >
+                      <Heart className={styles.liked} />
+                      Liked
+                    </button>
+                  ) : (
+                    <button
+                      className={classNames("btn", styles.btn)}
+                      onClick={() => addLikedVideo(video)}
+                    >
+                      <Heart />
+                      Like
+                    </button>
+                  )}
                   <button
                     className={classNames("btn", styles.btn)}
-                    onClick={() => deleteLikedVideo(video._id)}
+                    onClick={() => setShowPlaylistModal(true)}
                   >
-                    <Heart className={styles.liked} />
-                    Liked
+                    <Save />
+                    Save
                   </button>
-                ) : (
-                  <button
-                    className={classNames("btn", styles.btn)}
-                    onClick={() => addLikedVideo(video)}
-                  >
-                    <Heart />
-                    Like
-                  </button>
-                )}
-                <button className={classNames("btn", styles.btn)}>
-                  <Save />
-                  Save
-                </button>
-                {watchLater.some((item) => item._id === video._id) ? (
-                  <button
-                    className={classNames("btn", styles.btn, styles.watched)}
-                    onClick={() => deleteWatchLater(video._id)}
-                  >
-                    <Watch /> Watch Later
-                  </button>
-                ) : (
-                  <button
-                    className={classNames("btn", styles.btn)}
-                    onClick={() => addWatchLater(video)}
-                  >
-                    <Watch /> Watch Later
-                  </button>
-                )}
-              </div>
+                  {showPlaylistModal && (
+                    <AddPlaylist
+                      title="Add to Playlist"
+                      handleModal={setShowPlaylistModal}
+                      playlists={playlists}
+                      video={video}
+                    />
+                  )}
+                  {watchLater.some((item) => item._id === video._id) ? (
+                    <button
+                      className={classNames("btn", styles.btn, styles.watched)}
+                      onClick={() => deleteWatchLater(video._id)}
+                    >
+                      <Watch /> Watch Later
+                    </button>
+                  ) : (
+                    <button
+                      className={classNames("btn", styles.btn)}
+                      onClick={() => addWatchLater(video)}
+                    >
+                      <Watch /> Watch Later
+                    </button>
+                  )}
+                </div>
+              )}
             </div>
             <p className={styles.videoDescription}>{video.description}</p>
           </div>
