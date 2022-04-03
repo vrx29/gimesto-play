@@ -46,10 +46,10 @@ export function AddPlaylist({ title, handleModal, playlists, video }) {
               <label
                 className={styles.filterCheckbox}
                 key={item._id}
-                htmlFor="playlist"
+                htmlFor={item.name}
               >
                 <input
-                  id="playlist"
+                  id={item.name}
                   checked={item.videos.some((i) => i._id === video._id)}
                   type="checkbox"
                   onChange={(e) => handlePlaylistChange(e, item._id)}
