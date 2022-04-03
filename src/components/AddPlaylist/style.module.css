@@ -1,0 +1,50 @@
+.modalCont {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+  width: 300px;
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  color: var(--COLOR-DARK);
+  background-color: var(--COLOR-CARD-BACKGROUND);
+}
+
+.title {
+  margin-bottom: 1rem;
+  color: var(--COLOR-LIGHT);
+}
+
+.playlistCont {
+  margin: 1rem 0;
+}
+
+.filterCheckbox {
+  
+  color: var(--COLOR-GRAY-400);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0;
+}
+
+.filterCheckbox input {
+  margin-right: 0.5rem;
+  accent-color: var(--COLOR-PRIMARY);
+}
+
+.btn {
+  margin-top: 1rem;
+  width: 100%;
+  justify-content: center;
+}

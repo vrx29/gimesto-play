@@ -1,11 +1,11 @@
 import { Delete, Heart, Save, Watch } from "assets/icons";
 import classNames from "classnames";
-import { useHistory, useLikedVideo, useWatch } from "context";
+import { useLikedVideo, useWatch } from "context";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./style.module.css";
 
-export function SharedVideoCard({ video }) {
+export function SharedVideoCard({ video, deleteVideo }) {
   const {
     _id,
     title,
@@ -19,8 +19,7 @@ export function SharedVideoCard({ video }) {
   const { likedVideos, addLikedVideo, deleteLikedVideo } = useLikedVideo();
   const { watchLater, addWatchLater, deleteWatchLater } = useWatch();
   const { pathname } = useLocation();
-  const { deleteVideoHistory } = useHistory();
-
+  console.log();
   return (
     <div className={styles.videoCard}>
       <Link to={`/video/${_id}`}>
@@ -64,10 +63,13 @@ export function SharedVideoCard({ video }) {
               Like
             </button>
           )}
-          <button className={classNames("btn", styles.btn)}>
-            <Save />
-            Save
-          </button>
+          {!pathname.startsWith("/playlist/") && (
+            <button className={classNames("btn", styles.btn)}>
+              <Save />
+              Save
+            </button>
+          )}
+
           {watchLater.some((item) => item._id === video._id) ? (
             <button
               className={classNames("btn", styles.btn, styles.watched)}
@@ -83,10 +85,10 @@ export function SharedVideoCard({ video }) {
               <Watch /> Watch Later
             </button>
           )}
-          {pathname === "/history" && (
+          {deleteVideo && (
             <button
               className={classNames("btn", styles.btn, styles.deleteIcon)}
-              onClick={() => deleteVideoHistory(video._id)}
+              onClick={() => deleteVideo(video._id)}
             >
               <Delete />
             </button>
