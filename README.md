@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+<div align="center">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img alt="Gimesto Play logo" src="src/assets/logo/logo.png" />
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+![Forks](https://img.shields.io/github/forks/vrx29/gimesto-play)
+![Stars](https://img.shields.io/github/stars/vrx29/gimesto-play)
 
-### `npm start`
+</div>
+ 
+ ---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A video library in which you can browse multiple videos, like then, save them to watch later or playlist and even whatever video you will watch your history will also be recorded.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Live Preview: [gimesto-play.vercel.app](gimesto-play.vercel.app)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Features:
 
-### `npm run build`
+1. Authentication: Login and SignUp functionality
+2. Auth state persistance using cookies
+3. Private and public routes: Private routes accessible only on login
+4. Mock backend using Mirage JS and Mockman API.
+5. React: useContext, useReducer, useEffect, useState, custom hooks, functional components
+6. Liked Videos page user can like any vide0
+7. Watch later: video can be saved to watch later
+8. History: Every video you watch will be stored in history page
+9. Playlist You can create new playlist and add videos to them.
+10. Custom loaders: for loading state you will be able to see custom loader on waiting screen.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Features in progress/TODOs
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Video search functionality
+2. User profile page
+3. Forgot password page.
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Libraries used:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **React.js** : v17.0.2
+- **React router**: v6.2.2
+- **Axios** : v0.21.4
+- **Mirage js** : v0.1.41
+- **JWT** : v8.5.1
+- **Gimesto Component library** (developed by me)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Get started
 
-## Learn More
+1. **Clone the repo:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  $ git clone https://github.com/vrx29/gimesto-play.git
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Switch to `dev` branch:**
 
-### Code Splitting
+```bash
+  $ cd gimesto-play
+  $ git checkout dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. **Install required node modules:**
 
-### Analyzing the Bundle Size
+```bash
+  $ npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4. **Create a .env file at the root folder create a SECRET KEY**
 
-### Making a Progressive Web App
+```bash
+    REACT_APP_JWT_SECRET=radomkey
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+5. **Start the dev server:**
 
-### Advanced Configuration
+```bash
+  $ npm start
+                   or
+  $ yarn start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Open the `localhost:3000` link in the browser.
 
-### Deployment
+</br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+> 🚀 Tools and Stack Used
 
-### `npm run build` fails to minify
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
+<img src="https://img.shields.io/badge/Visual_Studio_Code-4059ad?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
+<img src="https://img.shields.io/badge/Figma-ff0054?style=for-the-badge&logo=figma&logoColor=white" />
+<img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+<img src="https://img.shields.io/badge/Yarn-2C8EBB?style=for-the-badge&logo=yarn&logoColor=white" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</br>
+
+#### Home page screenshot
+
+![Gimesto Play](/src/assets/readme/screen1.png)
+
+#### Trending Videos page screenshot
+
+![Gimesto Play](/src/assets/readme/screen2.png)
+
+#### Playlist page screenshot
+
+![Gimesto Play](/src/assets/readme/screen3.png)
+#### Single Video page screenshot
+
+![Gimesto Play](/src/assets/readme/screen4.png)
+#### Playlist Videos page screenshot
+
+![Gimesto Play 2](/src/assets/readme/screen5.png)
+
+
+> 👨‍💻 Connect with me
+> </br>
+
+<a href="https://twitter.com/vrx29"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/></a>
+<a href="https://github.com/vrx29/"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"/></a>
+<a href="https://www.linkedin.com/in/vrx29"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/></a>
+<a href="https://www.instagram.com/vrx29/"><img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/></a>
