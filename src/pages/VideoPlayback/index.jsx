@@ -4,7 +4,13 @@ import { useFetch } from "hooks";
 import { useParams } from "react-router-dom";
 import classNames from "classnames";
 import { Heart, Save, Watch } from "assets/icons";
-import { useHistory, useLikedVideo, usePlaylist, useWatch } from "context";
+import {
+  useAuth,
+  useHistory,
+  useLikedVideo,
+  usePlaylist,
+  useWatch,
+} from "context";
 import { AddPlaylist } from "components";
 
 export function VideoPlayback() {
@@ -13,6 +19,7 @@ export function VideoPlayback() {
   const { watchLater, addWatchLater, deleteWatchLater } = useWatch();
   const { playlists, getPlaylists } = usePlaylist();
   const [showPlaylistModal, setShowPlaylistModal] = useState(false);
+  const { userAuthState } = useAuth();
   const { addHistory } = useHistory();
   const {
     state: { data: video, loading },
@@ -53,7 +60,7 @@ export function VideoPlayback() {
                 />
                 <p>{video.channel}</p>
               </div>
-              {video?._id && (
+              {video?._id && userAuthState.isLoggedIn && (
                 <div className={styles.btnCont}>
                   {likedVideos.some((item) => item._id === video._id) ? (
                     <button
